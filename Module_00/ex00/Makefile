@@ -9,7 +9,7 @@ CYAN = \e[96m
 END = \e[39m
 
 #    Showing command
-DISP = TRUE
+DISP = FALSE
 
 ifeq ($(DISP),TRUE)
     HIDE =
@@ -18,19 +18,15 @@ else
 endif
 
 #    Includes
-CLASS_PATH = class
 
-CLASS = $(addprefix $(CLASS_PATH)/, Contact.hpp PhoneBook.hpp)
+#    Folders
+SRCS_PATH = ./
 
 #    Files
-SRCS_PATH = src
-
-FILES = main.cpp Contact.cpp PhoneBook.cpp
-
-SRCS = $(addprefix $(SRCS_PATH)/, $(FILES))
+SRCS = megaphone.cpp
 
 #    Compilation
-NAME = My_PhoneBook
+NAME = megaphone
 
 CXX = c++
 
@@ -40,12 +36,12 @@ RM = rm -rf
 
 OBJS_PATH = objs/
 
-OBJS = $(patsubst $(SRCS_PATH)%.cpp,    $(OBJS_PATH)%.o,    $(SRCS))
+OBJS = $(patsubst %.cpp,    $(OBJS_PATH)%.o,    $(SRCS))
 
 #    Rules
 all: $(NAME)
 
-$(NAME): $(OBJS_PATH) $(OBJS) $(CLASS)
+$(NAME): $(OBJS_PATH) $(OBJS)
 	@ echo "$(BLUE)\n         ***Make $(NAME) ***\n$(END)"
 	$(HIDE) $(CXX) $(CFLAGS) $(OBJS) -o $(NAME)
 	@ echo "$(GREEN)\n        ---$(NAME) created ---\n$(END)"
@@ -53,7 +49,7 @@ $(NAME): $(OBJS_PATH) $(OBJS) $(CLASS)
 $(OBJS_PATH):
 	$(HIDE) mkdir -p $(OBJS_PATH)
 
-$(OBJS_PATH)%.o: $(SRCS_PATH)%.cpp $(CLASS) Makefile
+$(OBJS_PATH)%.o: $(SRCS_PATH)%.cpp Makefile
 	$(HIDE) $(CXX) $(CFLAGS) -c $< -o $@
 	@ echo "$(GREEN)[ OK ]$(END) $(CYAN)${<:.s=.o}$(END)"
 
