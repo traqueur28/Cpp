@@ -6,12 +6,17 @@
 /*   By: jgourlin <jgourlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 12:50:05 by jgourlin          #+#    #+#             */
-/*   Updated: 2022/06/07 11:27:14 by jgourlin         ###   ########.fr       */
+/*   Updated: 2022/06/20 08:24:30 by jgourlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
+
+#include <iostream>
+#include <iomanip>
+#include <cstdlib>
+#include <limits>
 
 class Contact
 {

@@ -6,13 +6,10 @@
 /*   By: jgourlin <jgourlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 12:50:07 by jgourlin          #+#    #+#             */
-/*   Updated: 2022/06/07 11:59:26 by jgourlin         ###   ########.fr       */
+/*   Updated: 2022/06/20 08:25:53 by jgourlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
-#include <iomanip>
 #include "../class/Contact.hpp"
 
 Contact::Contact(void)
@@ -22,7 +19,7 @@ Contact::Contact(void)
 
 Contact::~Contact(void)
 {
-	//std::cout << "destuction du Contact" << std::endl;
+	//std::cout << "destruction du Contact" << std::endl;
 }
 
 void	Contact::contact_add(void)
@@ -37,6 +34,8 @@ void	Contact::contact_add(void)
 	std::cin >> this->_phonenumber;
 	std::cout << "What is your darkest secret?" << std::endl;
 	std::cin >> this->_secret;
+	std::cin.clear();
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
 
 void	Contact::contact_info(void)

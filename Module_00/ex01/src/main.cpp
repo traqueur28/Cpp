@@ -1,4 +1,3 @@
-#include <iostream>
 #include "../class/Contact.hpp"
 #include "../class/PhoneBook.hpp"
 
@@ -13,7 +12,7 @@ int	main(void)
 		if (count > 7)
 			count = 0;
 		std::cout << "ADD or SEARCH or EXIT" << std::endl;
-		std::cin >> inpt;
+		std::getline(std::cin, inpt);
 		if (inpt == "EXIT")
 			return (0);
 		else if (inpt == "ADD")
@@ -22,7 +21,7 @@ int	main(void)
 			count++;
 		}
 		else if (inpt == "SEARCH")
-			alpha.phonebook_search();
+			alpha.phonebook_search();	
 	}
 	return (0);
 }

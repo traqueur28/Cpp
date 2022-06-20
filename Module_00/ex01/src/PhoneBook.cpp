@@ -6,14 +6,10 @@
 /*   By: jgourlin <jgourlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 12:50:10 by jgourlin          #+#    #+#             */
-/*   Updated: 2022/06/07 12:58:17 by jgourlin         ###   ########.fr       */
+/*   Updated: 2022/06/20 08:29:19 by jgourlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <iomanip>
-#include <cstdlib>
-#include <limits>
 #include "../class/PhoneBook.hpp"
 
 PhoneBook::PhoneBook(void)
@@ -60,6 +56,7 @@ void	PhoneBook::phonebook_search(void)
 			_contact[temp].contact_info();
 			break;
 		}
-
 	}
+	std::cin.clear();
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
