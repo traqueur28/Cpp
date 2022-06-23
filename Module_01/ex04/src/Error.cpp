@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   Error.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgourlin <jgourlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/23 07:51:54 by jgourlin          #+#    #+#             */
-/*   Updated: 2022/06/23 07:51:55 by jgourlin         ###   ########.fr       */
+/*   Created: 2022/06/23 08:16:33 by jgourlin          #+#    #+#             */
+/*   Updated: 2022/06/23 09:04:11 by jgourlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_HPP
-# define HUMANB_HPP
+#include "../class/Replace.hpp"
 
-# include "Weapon.hpp"
-# include <iostream>
-
-class HumanB
+int ft_error()
 {
-public:
-    HumanB(std::string str);
-    ~HumanB();
-    void    attack(void);
-    void    setWeapon(Weapon &name);
+    std::cerr << "Error: Argument invalid <file> <s1> <s2>" << std::endl;
+    return (1);
+}
 
-private:
-    std::string _name;
-    Weapon      *_weapon;
-};
+int ft_error_open()
+{
+    std::cerr << "Error: File isn't open" << std::endl;
+    return (1);
+}
 
-#endif
+int ft_error_s()
+{
+    std::cerr << "Error: Unvalid string" << std::endl;
+    return (1);
+}

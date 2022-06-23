@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   Replace.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgourlin <jgourlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/23 07:51:54 by jgourlin          #+#    #+#             */
-/*   Updated: 2022/06/23 07:51:55 by jgourlin         ###   ########.fr       */
+/*   Created: 2022/06/23 08:14:22 by jgourlin          #+#    #+#             */
+/*   Updated: 2022/06/23 09:03:24 by jgourlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_HPP
-# define HUMANB_HPP
+#ifndef REPLACE_HPP
+# define REPLACE_HPP
 
-# include "Weapon.hpp"
 # include <iostream>
+# include <fstream>
+# include <string>
 
-class HumanB
-{
-public:
-    HumanB(std::string str);
-    ~HumanB();
-    void    attack(void);
-    void    setWeapon(Weapon &name);
+//   Error.cpp   
 
-private:
-    std::string _name;
-    Weapon      *_weapon;
-};
+int ft_error();
+int ft_error_open();
+int ft_error_s();
 
 #endif

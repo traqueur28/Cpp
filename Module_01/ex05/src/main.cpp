@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgourlin <jgourlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/23 07:51:54 by jgourlin          #+#    #+#             */
-/*   Updated: 2022/06/23 07:51:55 by jgourlin         ###   ########.fr       */
+/*   Created: 2022/06/23 09:17:54 by jgourlin          #+#    #+#             */
+/*   Updated: 2022/06/23 09:47:31 by jgourlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_HPP
-# define HUMANB_HPP
+#include "../class/Harl.hpp"
 
-# include "Weapon.hpp"
-# include <iostream>
-
-class HumanB
+int main(int argc, char **argv)
 {
-public:
-    HumanB(std::string str);
-    ~HumanB();
-    void    attack(void);
-    void    setWeapon(Weapon &name);
+    Harl    bot;
 
-private:
-    std::string _name;
-    Weapon      *_weapon;
-};
-
-#endif
+    if (argc != 2)
+        return (0);
+    bot.complain(argv[1]);
+    return (0);
+}
