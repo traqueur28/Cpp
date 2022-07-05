@@ -6,18 +6,19 @@
 /*   By: jgourlin <jgourlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 11:44:40 by jgourlin          #+#    #+#             */
-/*   Updated: 2022/07/05 09:10:16 by jgourlin         ###   ########.fr       */
+/*   Updated: 2022/07/05 09:08:46 by jgourlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../class/ClapTrap.hpp"
 #include "../class/ScavTrap.hpp"
+#include "../class/FragTrap.hpp"
 
 int main()
 {
-    ScavTrap    alpha("alpha");
-    ScavTrap    bravo(alpha);
-    ScavTrap    charlie("charlie");
+    FragTrap    alpha("alpha");
+    FragTrap    bravo(alpha);
+    FragTrap    charlie("charlie");
 
     std::cout << std::endl << std::endl;
     alpha.display_info();
@@ -72,18 +73,12 @@ int main()
     bravo.attack("nothing");
     charlie.attack("nothing");
 
-    alpha.guardGate();
-    bravo.guardGate();
-    charlie.guardGate();
+    alpha.highFivesGuys();
+    bravo.highFivesGuys();
+    charlie.highFivesGuys();
 
     for(int i = 0; i < 52; i++)
         alpha.attack("exhaust");
-
-    
-
-    
-
-    
 
 }
 
