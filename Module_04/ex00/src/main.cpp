@@ -6,13 +6,15 @@
 /*   By: jgourlin <jgourlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 14:47:34 by jgourlin          #+#    #+#             */
-/*   Updated: 2022/07/06 18:08:36 by jgourlin         ###   ########.fr       */
+/*   Updated: 2022/07/06 18:20:18 by jgourlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../class/Animal.hpp"
 #include "../class/Dog.hpp"
 #include "../class/Cat.hpp"
+#include "../class/WrongAnimal.hpp"
+#include "../class/WrongCat.hpp"
 
 int main()
 {
@@ -52,6 +54,20 @@ int main()
     std::cout << c2.getType() << " " << std::endl;
     cat.makeSound();
     c2.makeSound();
+
+    std::cout << " --- WrongCat WrongAnimal --- " << std::endl;
+
+    const WrongAnimal* Wrongmeta = new WrongAnimal();
+    const WrongAnimal* wrongcat = new WrongCat();
+
+    std::cout << Wrongmeta->getType() << " " << std::endl;
+    std::cout << wrongcat->getType() << " " << std::endl;
+    
+    wrongcat->makeSound(); //will output the cat sound!
+    Wrongmeta->makeSound();
+
+    delete Wrongmeta;
+    delete wrongcat;
 
     return (0);
 }

@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgourlin <jgourlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/06 14:48:03 by jgourlin          #+#    #+#             */
-/*   Updated: 2022/07/06 18:14:51 by jgourlin         ###   ########.fr       */
+/*   Created: 2022/07/06 18:12:12 by jgourlin          #+#    #+#             */
+/*   Updated: 2022/07/06 18:13:04 by jgourlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-# include "Animal.hpp"
+# include "WrongAnimal.hpp"
 
-class   Cat: public Animal
+class   WrongCat: public WrongAnimal
 {
     public:
         //Constructor
-        Cat();
-        Cat(const Cat &cpy);
+        WrongCat();
+        WrongCat(const WrongCat &cpy);
         
         //Destructor
-        ~Cat();
+        ~WrongCat();
 
         //Operator
-        Cat &operator=(const Cat &cpy);
+        WrongCat &operator=(const WrongCat &cpy);
 
         //Function
-        virtual void    makeSound() const;
+        void    makeSound() const;
 };
 
 #endif

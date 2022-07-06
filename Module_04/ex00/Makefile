@@ -20,14 +20,14 @@ endif
 #    Includes
 CLASS_PATH = class
 
-CFILES = Animal.hpp Dog.hpp Cat.hpp
+CFILES = Animal.hpp Dog.hpp Cat.hpp WrongCat.hpp WrongAnimal.hpp
 
 CLASS = $(addprefix $(CLASS_PATH)/, $(CFILES))
 
 #    Files
 SRCS_PATH = src
 
-FILES = main.cpp Animal.cpp Dog.cpp Cat.cpp
+FILES = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongCat.cpp WrongAnimal.cpp
 
 SRCS = $(addprefix $(SRCS_PATH)/, $(FILES))
 

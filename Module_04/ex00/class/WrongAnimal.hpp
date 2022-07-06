@@ -1,35 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgourlin <jgourlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/06 14:48:03 by jgourlin          #+#    #+#             */
-/*   Updated: 2022/07/06 18:14:51 by jgourlin         ###   ########.fr       */
+/*   Created: 2022/07/06 18:13:16 by jgourlin          #+#    #+#             */
+/*   Updated: 2022/07/06 18:13:47 by jgourlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
-# include "Animal.hpp"
+# include <iostream>
 
-class   Cat: public Animal
+class   WrongAnimal
 {
     public:
-        //Constructor
-        Cat();
-        Cat(const Cat &cpy);
-        
-        //Destructor
-        ~Cat();
+        //Conctructor
+        WrongAnimal();
+        WrongAnimal(const WrongAnimal &cpy);
 
-        //Operator
-        Cat &operator=(const Cat &cpy);
+        //Destructor
+        ~WrongAnimal();
 
         //Function
-        virtual void    makeSound() const;
+        void    makeSound() const;
+        std::string getType() const;
+        
+        //Operator
+        WrongAnimal  &operator=(const WrongAnimal &cpy);
+
+    protected:
+        //Attribut
+        std::string _type;
 };
 
 #endif
