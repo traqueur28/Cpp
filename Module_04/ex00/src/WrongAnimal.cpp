@@ -6,7 +6,7 @@
 /*   By: jgourlin <jgourlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 18:15:18 by jgourlin          #+#    #+#             */
-/*   Updated: 2022/07/06 18:15:19 by jgourlin         ###   ########.fr       */
+/*   Updated: 2022/07/06 18:22:18 by jgourlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ WrongAnimal  &WrongAnimal::operator=(const WrongAnimal &cpy)
 //Function
 
 void    WrongAnimal::makeSound() const{
-    std::cout << "Strange sound" << std::endl;
+    std::cout << "Wrong Strange sound" << std::endl;
 }
 
 std::string WrongAnimal::getType() const{

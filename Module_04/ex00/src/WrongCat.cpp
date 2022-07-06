@@ -6,7 +6,7 @@
 /*   By: jgourlin <jgourlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 18:14:07 by jgourlin          #+#    #+#             */
-/*   Updated: 2022/07/06 18:14:58 by jgourlin         ###   ########.fr       */
+/*   Updated: 2022/07/06 18:22:32 by jgourlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,5 @@ WrongCat &WrongCat::operator=(const WrongCat &cpy)
 }
 
 void    WrongCat::makeSound() const{
-    std::cout << "Mew" << std::endl;
+    std::cout << "Wrong Mew" << std::endl;
 }

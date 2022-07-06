@@ -6,7 +6,7 @@
 /*   By: jgourlin <jgourlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 14:47:34 by jgourlin          #+#    #+#             */
-/*   Updated: 2022/07/06 18:20:18 by jgourlin         ###   ########.fr       */
+/*   Updated: 2022/07/06 18:24:37 by jgourlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,20 @@ int main()
 
     delete Wrongmeta;
     delete wrongcat;
+
+    std::cout << " --- My Wrong Test --- " << std::endl;
+
+    WrongCat wc;
+    WrongAnimal wa;
+
+    WrongCat wc2(wc);
+
+    std::cout << wc.getType() << " " << std::endl;
+    std::cout << wc2.getType() << " " << std::endl;
+    std::cout << wa.getType() << " " << std::endl;
+    wc.makeSound();
+    wc2.makeSound();
+    wa.makeSound();
 
     return (0);
 }
