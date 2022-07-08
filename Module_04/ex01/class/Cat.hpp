@@ -1,52 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgourlin <jgourlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/27 15:17:00 by jgourlin          #+#    #+#             */
-/*   Updated: 2022/07/05 09:15:50 by jgourlin         ###   ########.fr       */
+/*   Created: 2022/07/06 14:48:03 by jgourlin          #+#    #+#             */
+/*   Updated: 2022/07/08 08:19:45 by jgourlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 
-# include "ClapTrap.hpp"
+# include "Animal.hpp"
+# include "Brain.hpp"
 
-class ScavTrap  : public ClapTrap
+class   Cat: public Animal
 {
     public:
         //Constructor
-        ScavTrap(std::string name);
-        ScavTrap(ScavTrap const &cpy); //par copie
-
+        Cat();
+        Cat(const Cat &cpy);
+        
         //Destructor
-        ~ScavTrap();
+        ~Cat();
 
         //Operator
-        ScavTrap    &operator=(ScavTrap const &cpy);
+        Cat &operator=(const Cat &cpy);
 
         //Function
-        void    attack(const std::string &target);
-        void    guardGate();
-
-        //Attributs
+        virtual void    makeSound() const;
+        void    set_ideas(std::string str);
+        void    print_idea();
 
     private:
-        //Constructor
-        ScavTrap();
-
-        //Destructor
-
-        //Operator
-
-        //Function
-
-        //Attributs
+        Brain   *_Brain;
 };
-
-
 
 #endif

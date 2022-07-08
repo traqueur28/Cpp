@@ -1,52 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgourlin <jgourlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/27 15:17:00 by jgourlin          #+#    #+#             */
-/*   Updated: 2022/07/05 09:15:50 by jgourlin         ###   ########.fr       */
+/*   Created: 2022/07/06 18:12:12 by jgourlin          #+#    #+#             */
+/*   Updated: 2022/07/06 18:13:04 by jgourlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-# include "ClapTrap.hpp"
+# include "WrongAnimal.hpp"
 
-class ScavTrap  : public ClapTrap
+class   WrongCat: public WrongAnimal
 {
     public:
         //Constructor
-        ScavTrap(std::string name);
-        ScavTrap(ScavTrap const &cpy); //par copie
-
+        WrongCat();
+        WrongCat(const WrongCat &cpy);
+        
         //Destructor
-        ~ScavTrap();
+        ~WrongCat();
 
         //Operator
-        ScavTrap    &operator=(ScavTrap const &cpy);
+        WrongCat &operator=(const WrongCat &cpy);
 
         //Function
-        void    attack(const std::string &target);
-        void    guardGate();
-
-        //Attributs
-
-    private:
-        //Constructor
-        ScavTrap();
-
-        //Destructor
-
-        //Operator
-
-        //Function
-
-        //Attributs
+        void    makeSound() const;
 };
-
-
 
 #endif

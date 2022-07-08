@@ -1,52 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgourlin <jgourlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/27 15:17:00 by jgourlin          #+#    #+#             */
-/*   Updated: 2022/07/05 09:15:50 by jgourlin         ###   ########.fr       */
+/*   Created: 2022/07/08 06:56:55 by jgourlin          #+#    #+#             */
+/*   Updated: 2022/07/08 08:19:48 by jgourlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-# include "ClapTrap.hpp"
+# include <iostream>
 
-class ScavTrap  : public ClapTrap
+class Brain
 {
     public:
         //Constructor
-        ScavTrap(std::string name);
-        ScavTrap(ScavTrap const &cpy); //par copie
+        Brain();
+        Brain(const Brain &cpy);
 
         //Destructor
-        ~ScavTrap();
+        virtual ~Brain();
 
         //Operator
-        ScavTrap    &operator=(ScavTrap const &cpy);
+        Brain   &operator=(const Brain &cpy);
 
         //Function
-        void    attack(const std::string &target);
-        void    guardGate();
-
-        //Attributs
-
+        void    set_ideas(std::string);
+        std::string get_idea();
+    
     private:
-        //Constructor
-        ScavTrap();
-
-        //Destructor
-
-        //Operator
-
-        //Function
-
-        //Attributs
+        std::string _ideas[100];
 };
-
 
 
 #endif

@@ -1,52 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgourlin <jgourlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/27 15:17:00 by jgourlin          #+#    #+#             */
-/*   Updated: 2022/07/05 09:15:50 by jgourlin         ###   ########.fr       */
+/*   Created: 2022/07/06 14:48:01 by jgourlin          #+#    #+#             */
+/*   Updated: 2022/07/08 08:19:43 by jgourlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
-# include "ClapTrap.hpp"
+# include "Animal.hpp"
+# include "Brain.hpp"
 
-class ScavTrap  : public ClapTrap
+class   Dog : public Animal
 {
     public:
         //Constructor
-        ScavTrap(std::string name);
-        ScavTrap(ScavTrap const &cpy); //par copie
+        Dog();
+        Dog(const Dog &cpy);
 
         //Destructor
-        ~ScavTrap();
+        ~Dog();
 
         //Operator
-        ScavTrap    &operator=(ScavTrap const &cpy);
+        Dog &operator=(const Dog &cpy);
 
         //Function
-        void    attack(const std::string &target);
-        void    guardGate();
-
-        //Attributs
+        virtual void    makeSound() const;
+        void    set_ideas(std::string str);
+        void    print_idea();
 
     private:
-        //Constructor
-        ScavTrap();
-
-        //Destructor
-
-        //Operator
-
-        //Function
-
-        //Attributs
+        Brain   *_Brain;
 };
-
 
 
 #endif

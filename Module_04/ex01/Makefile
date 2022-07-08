@@ -20,19 +20,19 @@ endif
 #    Includes
 CLASS_PATH = class
 
-CFILES = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
+CFILES = Animal.hpp Dog.hpp Cat.hpp WrongCat.hpp WrongAnimal.hpp Brain.hpp
 
 CLASS = $(addprefix $(CLASS_PATH)/, $(CFILES))
 
 #    Files
 SRCS_PATH = src
 
-FILES = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
+FILES = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongCat.cpp WrongAnimal.cpp Brain.cpp
 
 SRCS = $(addprefix $(SRCS_PATH)/, $(FILES))
 
 #    Compilation
-NAME = DiamondTrap
+NAME = Animal
 
 CXX = c++
 

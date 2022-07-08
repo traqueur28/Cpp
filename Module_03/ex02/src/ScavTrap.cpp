@@ -6,7 +6,7 @@
 /*   By: jgourlin <jgourlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 15:16:38 by jgourlin          #+#    #+#             */
-/*   Updated: 2022/07/05 08:36:21 by jgourlin         ###   ########.fr       */
+/*   Updated: 2022/07/06 12:48:56 by jgourlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ ScavTrap::ScavTrap(std::string name): ClapTrap(name)
 ScavTrap::ScavTrap(ScavTrap const &cpy): ClapTrap(cpy)
 {
     std::cout << "\033[32m[ScavTrap] Copy Constructor\033[0m" << std::endl;
-
 }
 
 //Destructor
