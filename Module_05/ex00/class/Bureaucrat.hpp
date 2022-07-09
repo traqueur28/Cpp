@@ -6,7 +6,7 @@
 /*   By: jgourlin <jgourlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 10:16:39 by jgourlin          #+#    #+#             */
-/*   Updated: 2022/07/09 12:43:02 by jgourlin         ###   ########.fr       */
+/*   Updated: 2022/07/09 13:10:38 by jgourlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ class Bureaucrat
 
 	private:
 		Bureaucrat();
-		std::string	_name;
+		const std::string	_name;
 		int	_grade;
 };
 
