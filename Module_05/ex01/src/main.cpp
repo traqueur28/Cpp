@@ -6,7 +6,7 @@
 /*   By: jgourlin <jgourlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 10:16:28 by jgourlin          #+#    #+#             */
-/*   Updated: 2022/07/11 15:56:51 by jgourlin         ###   ########.fr       */
+/*   Updated: 2022/07/12 13:50:53 by jgourlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -152,35 +152,36 @@ int	main()
 		Formh = Form9;
 		std::cout << Formh << std::endl;
 	}
+	
 	{
-		std::cout << "--- SIGN ---" << std::endl;
+		std::cout << "--- SIGN ---" << std::endl << std::endl;
 		Bureaucrat	leader("leader", 1);
 		Bureaucrat	manager("manager", 75);
 		Bureaucrat	slave("slave", 150);
 		Form	FormA("forma", 20, 5);
 
-		std::cout << "main: " << FormA << std::endl;
+		std::cout << std::endl << "main: " << FormA << std::endl;
 		try{
 			slave.signForm(FormA);
 		}
 		catch(std::exception &e){
 			std::cerr << e.what() << std::endl;
 		}
-		std::cout << "main: " << FormA << std::endl;
+		std::cout << std::endl << "main: " << FormA << std::endl;
 		try{
 			manager.signForm(FormA);
 		}
 		catch(std::exception &e){
 			std::cerr << e.what() << std::endl;
 		}
-		std::cout << "main: " << FormA << std::endl;
+		std::cout << std::endl << "main: " << FormA << std::endl;
 		try{
 			leader.signForm(FormA);
 		}
 		catch(std::exception &e){
 			std::cerr << e.what() << std::endl;
 		}
-		std::cout << "main: " << FormA << std::endl;
+		std::cout << std::endl << "main: " << FormA << std::endl;
 	}
 	
 }
