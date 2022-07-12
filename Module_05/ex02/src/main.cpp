@@ -6,11 +6,14 @@
 /*   By: jgourlin <jgourlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 10:16:28 by jgourlin          #+#    #+#             */
-/*   Updated: 2022/07/12 17:52:55 by jgourlin         ###   ########.fr       */
+/*   Updated: 2022/07/12 18:49:08 by jgourlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../class/Bureaucrat.hpp"
+#include "../class/PresidentialPardonForm.hpp"
+#include "../class/RobotomyRequestForm.hpp"
+#include "../class/ShrubberyCreationForm.hpp"
 
 int	main()
 {
@@ -93,6 +96,9 @@ int	main()
 	std::cout << std::endl << "--- FORM ---" << std::endl << std::endl;
 	{
 		std::cout << "--- SIGN CREA---" << std::endl;
+		PresidentialPardonForm FormA("yo");
+
+
 
 	}
 	
@@ -101,6 +107,7 @@ int	main()
 		Bureaucrat	leader("leader", 1);
 		Bureaucrat	manager("manager", 75);
 		Bureaucrat	slave("slave", 150);
+		PresidentialPardonForm FormA("World");
 
 		std::cout << std::endl << "main: " << FormA << std::endl;
 			slave.signForm(FormA);
