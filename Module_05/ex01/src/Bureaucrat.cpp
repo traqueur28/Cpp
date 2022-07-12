@@ -6,7 +6,7 @@
 /*   By: jgourlin <jgourlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 10:16:26 by jgourlin          #+#    #+#             */
-/*   Updated: 2022/07/11 16:00:27 by jgourlin         ###   ########.fr       */
+/*   Updated: 2022/07/12 14:02:38 by jgourlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	Bureaucrat::retrograde(){
 	this->_grade++;
 }
 
-void	Bureaucrat::signForm(Form form)
+void	Bureaucrat::signForm(Form &form)
 {
 	try
 	{

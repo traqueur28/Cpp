@@ -6,7 +6,7 @@
 /*   By: jgourlin <jgourlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 10:41:00 by jgourlin          #+#    #+#             */
-/*   Updated: 2022/07/11 15:21:17 by jgourlin         ###   ########.fr       */
+/*   Updated: 2022/07/12 14:02:31 by jgourlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ class Form
             int get_g_exec() const;
             int get_g_sig() const;
             bool    get_signed() const;
-        void    beSigned(Bureaucrat bur);
+        void    beSigned(Bureaucrat &bur);
 
     private:
         Form();

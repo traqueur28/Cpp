@@ -6,7 +6,7 @@
 /*   By: jgourlin <jgourlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 10:16:39 by jgourlin          #+#    #+#             */
-/*   Updated: 2022/07/11 15:21:49 by jgourlin         ###   ########.fr       */
+/*   Updated: 2022/07/12 14:02:30 by jgourlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Bureaucrat
 		int	getGrade() const;
 		void	promote();
 		void	retrograde();
-		void	signForm(Form form);
+		void	signForm(Form &form);
 
 		class GradeTooHighException : public std::exception
 		{

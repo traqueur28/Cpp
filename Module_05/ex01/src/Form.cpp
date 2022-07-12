@@ -6,7 +6,7 @@
 /*   By: jgourlin <jgourlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 10:40:59 by jgourlin          #+#    #+#             */
-/*   Updated: 2022/07/11 15:28:29 by jgourlin         ###   ########.fr       */
+/*   Updated: 2022/07/12 14:03:02 by jgourlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ bool    Form::get_signed() const{
 
 
     //other
-void    Form::beSigned(Bureaucrat bur)
+void    Form::beSigned(Bureaucrat &bur)
 {
     if (bur.getGrade() > this->get_g_sig())
         throw GradeTooLowException();

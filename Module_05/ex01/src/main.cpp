@@ -6,7 +6,7 @@
 /*   By: jgourlin <jgourlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 10:16:28 by jgourlin          #+#    #+#             */
-/*   Updated: 2022/07/12 13:50:53 by jgourlin         ###   ########.fr       */
+/*   Updated: 2022/07/12 14:00:50 by jgourlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,26 +161,26 @@ int	main()
 		Form	FormA("forma", 20, 5);
 
 		std::cout << std::endl << "main: " << FormA << std::endl;
-		try{
+		//try{
 			slave.signForm(FormA);
-		}
-		catch(std::exception &e){
-			std::cerr << e.what() << std::endl;
-		}
+		//}
+		//catch(std::exception &e){
+		//	std::cerr << e.what() << std::endl;
+		//}
 		std::cout << std::endl << "main: " << FormA << std::endl;
-		try{
+		//try{
 			manager.signForm(FormA);
-		}
-		catch(std::exception &e){
-			std::cerr << e.what() << std::endl;
-		}
+		//}
+		//catch(std::exception &e){
+		//	std::cerr << e.what() << std::endl;
+		//}
 		std::cout << std::endl << "main: " << FormA << std::endl;
-		try{
+		//try{
 			leader.signForm(FormA);
-		}
-		catch(std::exception &e){
-			std::cerr << e.what() << std::endl;
-		}
+		//}
+		//catch(std::exception &e){
+		//	std::cerr << e.what() << std::endl;
+		//}
 		std::cout << std::endl << "main: " << FormA << std::endl;
 	}
 	
