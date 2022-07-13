@@ -6,7 +6,7 @@
 /*   By: jgourlin <jgourlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 14:47:34 by jgourlin          #+#    #+#             */
-/*   Updated: 2022/07/08 08:40:20 by jgourlin         ###   ########.fr       */
+/*   Updated: 2022/07/13 11:45:39 by jgourlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main()
     const AAnimal* j = new Dog();
     const AAnimal* i = new Cat();
 
-    //const   AAnimal *a = new AAnimal();
+    //const   AAnimal *a = new AAnimal();//Impossible to create
 
     delete j;//should not create a leak
     delete i;

@@ -6,7 +6,7 @@
 /*   By: jgourlin <jgourlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 14:49:27 by jgourlin          #+#    #+#             */
-/*   Updated: 2022/07/08 08:28:13 by jgourlin         ###   ########.fr       */
+/*   Updated: 2022/07/13 11:42:36 by jgourlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ Cat::Cat(): Animal()
 {
     this->_Brain = new Brain();
     this->_type = "Cat";
-    std::cout << "\033[036m[Cat] Default Constructor\033[0" << std::endl;
+    std::cout << "\033[036m[Cat] Default Constructor\033[0m" << std::endl;
 }
 
 Cat::Cat(const Cat &cpy): Animal(cpy)
 {
     this->_Brain = new Brain(*cpy._Brain);
-    std::cout << "\033[036m[Cat] Copy Constructor\033[0" << std::endl;
+    std::cout << "\033[036m[Cat] Copy Constructor\033[0m" << std::endl;
 }
 
 //Destructor
@@ -32,7 +32,7 @@ Cat::Cat(const Cat &cpy): Animal(cpy)
 Cat::~Cat()
 {
     delete this->_Brain;
-    std::cout << "\033[036m[Cat] Destructor\033[0" << std::endl;
+    std::cout << "\033[036m[Cat] Destructor\033[0m" << std::endl;
 }
 
 //Operator
