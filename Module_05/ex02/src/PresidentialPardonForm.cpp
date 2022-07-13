@@ -6,7 +6,7 @@
 /*   By: jgourlin <jgourlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 15:33:11 by jgourlin          #+#    #+#             */
-/*   Updated: 2022/07/12 17:52:52 by jgourlin         ###   ########.fr       */
+/*   Updated: 2022/07/13 09:17:39 by jgourlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,9 @@ std::string PresidentialPardonForm::get_target() const{
     return (this->_target);
 }
 
-void    PresidentialPardonForm::execute(const Bureaucrat &executor){
-    std::cout << this->get_target() << " has been pardoned by Zaphod Beeblebrox !" << std::endl
+void    PresidentialPardonForm::execute(const Bureaucrat &executor) const{
+    (void) executor;
+    std::cout << this->get_target() << " has been pardoned by Zaphod Beeblebrox !" << std::endl;
 }
 
 //Operator

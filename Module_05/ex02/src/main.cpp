@@ -6,7 +6,7 @@
 /*   By: jgourlin <jgourlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 10:16:28 by jgourlin          #+#    #+#             */
-/*   Updated: 2022/07/12 18:49:08 by jgourlin         ###   ########.fr       */
+/*   Updated: 2022/07/13 09:42:25 by jgourlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,10 +96,11 @@ int	main()
 	std::cout << std::endl << "--- FORM ---" << std::endl << std::endl;
 	{
 		std::cout << "--- SIGN CREA---" << std::endl;
-		PresidentialPardonForm FormA("yo");
+		PresidentialPardonForm	FormA("world");
+		RobotomyRequestForm		FormB("something");
+		ShrubberyCreationForm	FormC("garden");
 
-
-
+		//Form	fail("name", 128, 42);//Doesn't work cause function pure virtual
 	}
 	
 	{
@@ -107,7 +108,44 @@ int	main()
 		Bureaucrat	leader("leader", 1);
 		Bureaucrat	manager("manager", 75);
 		Bureaucrat	slave("slave", 150);
-		PresidentialPardonForm FormA("World");
+		PresidentialPardonForm	FormA("World");
+		RobotomyRequestForm		FormB("something");
+		ShrubberyCreationForm	FormC("garden");
+
+		std::cout << "--- TRY EXECUTE NOT SIGNED ---" << std::endl << std::endl;
+		std::cout << "--- PRESIDENT ---" << std::endl << std::endl;
+
+		std::cout << std::endl << "main: " << FormA << std::endl;
+			slave.executeForm(FormA);
+		std::cout << std::endl << "main: " << FormA << std::endl;
+			manager.executeForm(FormA);
+		std::cout << std::endl << "main: " << FormA << std::endl;
+			leader.executeForm(FormA);
+		std::cout << std::endl << "main: " << FormA << std::endl;
+
+		std::cout << "--- ROBOTOMY ---" << std::endl << std::endl;
+
+		std::cout << std::endl << "main: " << FormB << std::endl;
+			slave.executeForm(FormB);
+		std::cout << std::endl << "main: " << FormB << std::endl;
+			manager.executeForm(FormB);
+		std::cout << std::endl << "main: " << FormB << std::endl;
+			leader.executeForm(FormB);
+		std::cout << std::endl << "main: " << FormB << std::endl;
+
+		std::cout << "--- TREE ---" << std::endl << std::endl;
+
+		std::cout << std::endl << "main: " << FormC << std::endl;
+			slave.executeForm(FormC);
+		std::cout << std::endl << "main: " << FormC << std::endl;
+			manager.executeForm(FormC);
+		std::cout << std::endl << "main: " << FormC << std::endl;
+			leader.executeForm(FormC);
+		std::cout << std::endl << "main: " << FormC << std::endl;
+
+
+		std::cout << "--- TRY SIGN ---" << std::endl << std::endl;
+		std::cout << "--- PRESIDENT ---" << std::endl << std::endl;
 
 		std::cout << std::endl << "main: " << FormA << std::endl;
 			slave.signForm(FormA);
@@ -116,6 +154,57 @@ int	main()
 		std::cout << std::endl << "main: " << FormA << std::endl;
 			leader.signForm(FormA);
 		std::cout << std::endl << "main: " << FormA << std::endl;
+
+		std::cout << "--- ROBOTOMY ---" << std::endl << std::endl;
+
+		std::cout << std::endl << "main: " << FormB << std::endl;
+			slave.signForm(FormB);
+		std::cout << std::endl << "main: " << FormB << std::endl;
+			manager.signForm(FormB);
+		std::cout << std::endl << "main: " << FormB << std::endl;
+			leader.signForm(FormB);
+		std::cout << std::endl << "main: " << FormB << std::endl;
+
+		std::cout << "--- TREE ---" << std::endl << std::endl;
+
+		std::cout << std::endl << "main: " << FormC << std::endl;
+			slave.signForm(FormC);
+		std::cout << std::endl << "main: " << FormC << std::endl;
+			manager.signForm(FormC);
+		std::cout << std::endl << "main: " << FormC << std::endl;
+			leader.signForm(FormC);
+		std::cout << std::endl << "main: " << FormC << std::endl;
+
+		std::cout << "--- TRY EXECUTE SIGNED ---" << std::endl << std::endl;
+		std::cout << "--- PRESIDENT ---" << std::endl << std::endl;
+
+		std::cout << std::endl << "main: " << FormA << std::endl;
+			slave.executeForm(FormA);
+		std::cout << std::endl << "main: " << FormA << std::endl;
+			manager.executeForm(FormA);
+		std::cout << std::endl << "main: " << FormA << std::endl;
+			leader.executeForm(FormA);
+		std::cout << std::endl << "main: " << FormA << std::endl;
+
+		std::cout << "--- ROBOTOMY ---" << std::endl << std::endl;
+
+		std::cout << std::endl << "main: " << FormB << std::endl;
+			slave.executeForm(FormB);
+		std::cout << std::endl << "main: " << FormB << std::endl;
+			manager.executeForm(FormB);
+		std::cout << std::endl << "main: " << FormB << std::endl;
+			leader.executeForm(FormB);
+		std::cout << std::endl << "main: " << FormB << std::endl;
+
+		std::cout << "--- TREE ---" << std::endl << std::endl;
+
+		std::cout << std::endl << "main: " << FormC << std::endl;
+			slave.executeForm(FormC);
+		std::cout << std::endl << "main: " << FormC << std::endl;
+			manager.executeForm(FormC);
+		std::cout << std::endl << "main: " << FormC << std::endl;
+			leader.executeForm(FormC);
+		std::cout << std::endl << "main: " << FormC << std::endl;
 	}
 	
 }

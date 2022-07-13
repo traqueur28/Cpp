@@ -6,7 +6,7 @@
 /*   By: jgourlin <jgourlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 16:36:46 by jgourlin          #+#    #+#             */
-/*   Updated: 2022/07/12 17:52:50 by jgourlin         ###   ########.fr       */
+/*   Updated: 2022/07/13 09:47:07 by jgourlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 
 //Constructor
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target): Form("Presidential", 72, 45), _target(target){
-    std::cout << "[President] Conctructor called " << std::endl;
+RobotomyRequestForm::RobotomyRequestForm(std::string target): Form("Robotomy", 72, 45), _target(target){
+    std::cout << "[Robotomy] Conctructor called " << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &cpy): Form(cpy),
 _target(cpy._target){
-    std::cout << "[President] Conctructor called " << std::endl;
+    std::cout << "[Robotomy] Conctructor called " << std::endl;
 }
 
 //Destructor
 
 RobotomyRequestForm::~RobotomyRequestForm(){
-    std::cout << "[President] Destructor called " << std::endl;
+    std::cout << "[Robotomy] Destructor called " << std::endl;
 }
 
 //Function
@@ -35,9 +35,10 @@ std::string RobotomyRequestForm::get_target() const{
     return (this->_target);
 }
 
-void    RobotomyRequestForm::execute(const Bureaucrat &executor){
-    srand (time(NULL));
-    int i = rand() % 1;
+void    RobotomyRequestForm::execute(const Bureaucrat &executor) const{
+    (void) executor;
+    std::srand(time(NULL));
+    int i = std::rand() % 2;
 
     std::cout << "BZZZZZZZZZZZZZZzzzzzz..." << std::endl;
     if (i)

@@ -6,7 +6,7 @@
 /*   By: jgourlin <jgourlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 16:37:40 by jgourlin          #+#    #+#             */
-/*   Updated: 2022/07/12 17:52:39 by jgourlin         ###   ########.fr       */
+/*   Updated: 2022/07/13 09:31:31 by jgourlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 
 //Constructor
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target): Form("Presidential", 145, 137), _target(target){
-    std::cout << "[President] Conctructor called " << std::endl;
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target): Form("shrubbery", 145, 137), _target(target){
+    std::cout << "[Shrubbery] Conctructor called " << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &cpy): Form(cpy),
 _target(cpy._target){
-    std::cout << "[President] Conctructor called " << std::endl;
+    std::cout << "[Shrubbery] Conctructor called " << std::endl;
 }
 
 //Destructor
 
 ShrubberyCreationForm::~ShrubberyCreationForm(){
-    std::cout << "[President] Destructor called " << std::endl;
+    std::cout << "[Shrubbery] Destructor called " << std::endl;
 }
 
 //Function
@@ -35,7 +35,8 @@ std::string ShrubberyCreationForm::get_target() const{
     return (this->_target);
 }
 
-void    ShrubberyCreationForm::execute(const Bureaucrat &executor){
+void    ShrubberyCreationForm::execute(const Bureaucrat &executor) const{
+	(void) executor;
     std::string FileName;
 	FileName = this->_target + "_shruberry";
 	std::ofstream	outfile(FileName.c_str());

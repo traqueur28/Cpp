@@ -6,7 +6,7 @@
 /*   By: jgourlin <jgourlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 15:19:58 by jgourlin          #+#    #+#             */
-/*   Updated: 2022/07/12 17:52:57 by jgourlin         ###   ########.fr       */
+/*   Updated: 2022/07/13 09:44:45 by jgourlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 # include <iostream>
 # include "Bureaucrat.hpp"
 # include "Form.hpp"
-class Bureaucrat;
+# include <ctime>
+# include <cstdlib>
 
 class RobotomyRequestForm : public Form
 {
@@ -27,7 +28,7 @@ class RobotomyRequestForm : public Form
         RobotomyRequestForm &operator=(const RobotomyRequestForm &cpy);
 
         //Function
-        void    execute(const Bureaucrat &executor);
+        virtual void    execute(const Bureaucrat &executor) const;
         std::string get_target() const;
         
 

@@ -6,7 +6,7 @@
 /*   By: jgourlin <jgourlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 10:16:26 by jgourlin          #+#    #+#             */
-/*   Updated: 2022/07/12 16:32:56 by jgourlin         ###   ########.fr       */
+/*   Updated: 2022/07/13 09:41:06 by jgourlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,10 +84,12 @@ void	Bureaucrat::executeForm(const Form &form)
 {
 	try
 	{
+		if (!form.get_signed())
+			throw Form::NotSignedException();
 		if (this->getGrade() > form.get_g_exec())
 			throw Form::GradeTooLowExecException();
-		form.execute(*this);
 		std::cout << this->getName() << " executed " << form.get_name() << std::endl;
+		form.execute(*this);
 	}
 	catch(const std::exception& e)
 	{

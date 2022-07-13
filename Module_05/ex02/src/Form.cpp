@@ -6,7 +6,7 @@
 /*   By: jgourlin <jgourlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 10:40:59 by jgourlin          #+#    #+#             */
-/*   Updated: 2022/07/12 15:17:37 by jgourlin         ###   ########.fr       */
+/*   Updated: 2022/07/13 09:16:37 by jgourlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ const char  *Form::NotSignedException::what()const throw(){
 }
 
 const char  *Form::GradeTooLowExecException::what()const throw(){
-    return ("Grade too low for exec")
+    return ("Grade too low for exec");
 }
 
 //Function

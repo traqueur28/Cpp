@@ -6,7 +6,7 @@
 /*   By: jgourlin <jgourlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 15:20:01 by jgourlin          #+#    #+#             */
-/*   Updated: 2022/07/12 17:52:56 by jgourlin         ###   ########.fr       */
+/*   Updated: 2022/07/13 09:15:57 by jgourlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 # include "Bureaucrat.hpp"
 # include "Form.hpp"
 
-class Bureaucrat;
-
 class ShrubberyCreationForm : public Form
 {
     public:
@@ -29,7 +27,7 @@ class ShrubberyCreationForm : public Form
         ShrubberyCreationForm &operator=(const ShrubberyCreationForm &cpy);
 
         //Function
-        void    execute(const Bureaucrat &executor);
+        virtual void    execute(const Bureaucrat &executor) const;
         std::string get_target() const;
         
 
