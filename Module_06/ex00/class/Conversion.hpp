@@ -6,7 +6,7 @@
 /*   By: jgourlin <jgourlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 13:35:55 by jgourlin          #+#    #+#             */
-/*   Updated: 2022/07/14 19:39:44 by jgourlin         ###   ########.fr       */
+/*   Updated: 2022/07/15 10:06:18 by jgourlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <cctype>
 # include <string>
 # include <cmath>
-
+# include <iomanip>
 
 class Conversion
 {
@@ -33,13 +33,6 @@ class Conversion
         //Operator
         Conversion  &operator=(const Conversion &cpy);
 
-        //Thow
-        class ErrorType : public std::exception
-        {
-            public:
-                virtual const char* what() const throw();
-        };
-
         //Function
             //Accesssor
         std::string Get_Type() const;
@@ -47,6 +40,9 @@ class Conversion
         int     Get_Int() const;
         float   Get_Float() const;
         double  Get_Double() const;
+        bool    Get_Charerror() const;
+        bool    Get_Interror() const;
+        bool    Get_CharNoprint() const;
         
             //CheckType
         bool    Check_Char(const char *str);
@@ -68,8 +64,9 @@ class Conversion
         int         _int;
         float       _float;
         double      _double;
-        bool        _charerror;//faire acc
-        bool        _interror;//faire acc
+        bool        _charerror;
+        bool        _interror;
+        bool        _charNoprint;
 };
 
 #endif

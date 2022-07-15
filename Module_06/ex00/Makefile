@@ -32,7 +32,7 @@ FILES = main.cpp Conversion.cpp
 SRCS = $(addprefix $(SRCS_PATH)/, $(FILES))
 
 #    Compilation
-NAME = Conversion
+NAME = convert
 
 CXX = c++
 
