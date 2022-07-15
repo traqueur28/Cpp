@@ -6,7 +6,7 @@
 /*   By: jgourlin <jgourlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 13:35:54 by jgourlin          #+#    #+#             */
-/*   Updated: 2022/07/14 19:39:42 by jgourlin         ###   ########.fr       */
+/*   Updated: 2022/07/15 10:06:27 by jgourlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,39 +17,36 @@
 Conversion::Conversion(){
 }
 
-Conversion::Conversion(char *argv){
-    if (Check_Char(argv) && Check_Int(argv) && Check_Double(argv) && Check_Float(argv))
+Conversion::Conversion(char *argv): _charerror(false), _interror(false), _charNoprint(false)
+{
+    if (!Check_Char(argv) && !Check_Int(argv) && !Check_Double(argv) && !Check_Float(argv))
         this->_type = "notype";
     SetAll();
-    std::cout << "[Conversion] Constructor Called" << std::endl;
 }
 
 Conversion::Conversion(const Conversion &cpy){
-    std::cout << "[Conversion] Copy Constructor Called" << std::endl;
     *this = cpy;
 }
 
 //Destructor
 
-Conversion::~Conversion()
-{
-    std::cout << "[Conversion] Destructor Called" << std::endl;
+Conversion::~Conversion(){
 }
 
 //Operator
 
 Conversion  &Conversion::operator=(const Conversion &cpy)
 {
-    std::cout << "[Conversion] Assignement Called" << std::endl;
+    // std::cout << "[Conversion] Assignement Called" << std::endl;
+    this->_type = cpy._type;
     this->_char = cpy._char;
     this->_int = cpy._int;
     this->_float = cpy._float;
     this->_double = cpy._double;
-}
-
-//Throw
-const char  *Conversion::ErrorType::what() const throw(){
-    return ("No Type detected")
+    this->_charerror = cpy._charerror;
+    this->_interror = cpy._interror;
+    this->_charNoprint = cpy._charNoprint;
+    return (*this);   
 }
 
 //Function
@@ -75,11 +72,23 @@ double    Conversion::Get_Double() const{
     return (this->_double);
 }
 
+bool    Conversion::Get_Charerror() const{
+    return (this->_charerror);
+}
+
+bool    Conversion::Get_Interror() const{
+    return (this->_interror);
+}
+
+bool    Conversion::Get_CharNoprint() const{
+    return (this->_charNoprint);
+}
+
     //CheckType
 
 bool    Conversion::Check_Char(const char *str)
 {
-    if (str[1] || std::isprint(str[0]))
+    if (str[1] || !std::isprint(str[0]))
         return (false);
     this->_type = "CHAR";
     this->_char = str[0];
@@ -92,7 +101,7 @@ bool    Conversion::Check_Int(const char *str)
     char    *endptr = NULL;
     long    nb = strtol(str, &endptr, 10);
 
-    if (endptr || nb < INT_MIN || nb > INT_MAX)
+    if (*endptr || nb < INT_MIN || nb > INT_MAX)
         return (false);
     this->_type = "INT";
     this->_int = static_cast<int>(nb);
@@ -102,12 +111,12 @@ bool    Conversion::Check_Int(const char *str)
 bool    Conversion::Check_Float(const char *str)
 {
     char    *endptr = NULL;
-    long    nb = strtol(str, &endptr, 10);
+    float   nb = strtof(str, &endptr);
 
     if (endptr[0] != 'f' || endptr[1])
         return (false);
     this->_type = "FLOAT";
-    this->_float = static_cast<float>(nb);
+    this->_float = nb;
     return (true);
 }
 
@@ -116,62 +125,79 @@ bool    Conversion::Check_Double(const char *str)
     char    *endptr = NULL;
     double  nb = strtod(str, &endptr);
 
-    if (endptr)
+    if (*endptr)
         return (false);
     this->_type = "DOUBLE";
-    this->_double = static_cast<double>(nb);
+    this->_double = nb;
     return (true);
 }
 
     //Other
 void    Conversion::Display() const
 {
-    std::cout <<"char  : " << this->Get_Char() <<
-                "int   : " << this->Get_Int() <<
-                "float : " << this->Get_Float() <<
-                "double: " << this->Get_Double() << std::endl;
+    std::cout << std::fixed << std::setprecision(1);
+
+    std::cout <<"char  : ";
+    if (this->_charerror)
+        std::cout << "Impossible" << std::endl;
+    else if (this->_charNoprint)
+        std::cout << "Non displayable" << std::endl;
+    else
+        std::cout << this->_char << std::endl;
+    
+    std::cout <<"int   : ";
+    if (this->_interror)
+        std::cout << "Impossible" << std::endl;
+    else
+        std::cout << this->_int << std::endl;
+    
+    std::cout << "float : " << this->_float << "f" << std::endl;
+	std::cout << "double: " << this->_double << std::endl;
 }
 
 void    Conversion::SetAll()
 {
-    int i = 0;
-    std::string tab[] = {"INT", "CHAR", "FLOAT", "DOUBLE"};
-    for (i; i < 4; i++)
-        if (this->Get_Type() == tab[i])
-            break;
-    switch (i)
+
+    if (this->_type == "INT")
     {
-        case 0://INT
-            this->_char = static_cast<char>(this->_int);
-            this->_float = static_cast<float>(this->_int);
-            this->_double = static_cast<double>(this->_int);
-        break;
-
-        case 1://CHAR
-            this->_int = static_cast<int>(this->_char);
-            this->_float = static_cast<float>(this->_char);
-            this->_double = static_cast<double>(this->_char);
-        break;
-
-        case 2://FLOAT
-            this->_int = static_cast<int>(this->_float);
-            this->_char = static_cast<char>(this->_float);
-            this->_double = static_cast<double>(this->_float);
-
-        break;
-
-        case 3://DOUBLE
-            this->_int = static_cast<int>(this->_double);
-            this->_float = static_cast<float>(this->_double);
-            this->_char = static_cast<char>(this->_double);
-
-        break;
-    
-    default:
-            this->_char = ;//impossible
-            this->_int = ;//impossible
-            this->_float = NAN;
-            this->_double = NAN;
-        break;
+        this->_char = static_cast<char>(_int);
+        this->_float = static_cast<float>(_int);
+        this->_double = static_cast<double>(_int);
     }
+    else if (this->_type == "CHAR")
+    {
+        this->_int = static_cast<int>(_char);
+        this->_float = static_cast<float>(_char);
+        this->_double = static_cast<double>(_char);
+    }
+    else if (this->_type == "FLOAT")
+    {
+        this->_int = static_cast<int>(_float);
+        this->_char = static_cast<char>(_float);
+        this->_double = static_cast<double>(_float);
+    }
+    else if (this->_type == "DOUBLE")
+    {
+        this->_int = static_cast<int>(_double);
+        this->_float = static_cast<float>(_double);
+        this->_char = static_cast<char>(_double);
+    }
+    else
+    {
+        this->_charerror = true;
+        this->_interror = true;
+        this->_float = NAN;
+        this->_double = NAN;
+    }
+    
+    double x = this->_double;
+    if (x < INT_MIN || x > INT_MAX || std::isnan(x) || std::isinf(x))
+	{
+		this->_charerror = true;
+		this->_interror = true;
+	}
+	else if (x < CHAR_MIN || x > CHAR_MAX)
+		this->_charerror = true;
+	else if (!std::isprint(this->_char))
+		this->_charNoprint = true;
 }

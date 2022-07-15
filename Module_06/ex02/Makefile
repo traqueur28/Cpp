@@ -20,19 +20,19 @@ endif
 #    Includes
 CLASS_PATH = class
 
-CFILES = Conversion.hpp
+CFILES = Base.hpp
 
 CLASS = $(addprefix $(CLASS_PATH)/, $(CFILES))
 
 #    Files
 SRCS_PATH = src
 
-FILES = main.cpp Conversion.cpp
+FILES = main.cpp Base.cpp
 
 SRCS = $(addprefix $(SRCS_PATH)/, $(FILES))
 
 #    Compilation
-NAME = convert
+NAME = TrueType
 
 CXX = c++
 

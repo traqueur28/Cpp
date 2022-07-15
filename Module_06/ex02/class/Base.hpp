@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgourlin <jgourlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/13 13:44:05 by jgourlin          #+#    #+#             */
-/*   Updated: 2022/07/15 10:06:47 by jgourlin         ###   ########.fr       */
+/*   Created: 2022/07/15 10:53:25 by jgourlin          #+#    #+#             */
+/*   Updated: 2022/07/15 11:19:12 by jgourlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../class/Conversion.hpp"
+#ifndef BASE_HPP
+# define BASE_HPP
 
-int error_argument()
-{
-    std::cout << "Unvalid argument: ./executable <argument>" << std::endl;
-    return (0);
-}
+# include <iostream>
+# include <ctime>
+# include <cstdlib>
 
-int main(int argc, char **argv)
+class Base
 {
-    if (argc == 2)
-    {
-        Conversion  a(argv[1]);
-        a.Display();
-    }
-    else
-        return (error_argument());
-    return (0);
-}
+	public:
+		virtual ~Base();
+};
+
+
+
+class A: public Base{};
+class B: public Base{};
+class C: public Base{};
+
+#endif
