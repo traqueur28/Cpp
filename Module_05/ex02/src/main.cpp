@@ -6,7 +6,7 @@
 /*   By: jgourlin <jgourlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 10:16:28 by jgourlin          #+#    #+#             */
-/*   Updated: 2022/07/13 09:42:25 by jgourlin         ###   ########.fr       */
+/*   Updated: 2022/07/13 10:58:48 by jgourlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ int	main()
 			Bureaucrat	charlie("charlie", 0);
 		}
 		catch (std::exception &e){
-			std::cerr << e.what() << std::endl;
+			std::cout << e.what() << std::endl;
 		}
 		try{
 			Bureaucrat	delta("delta", 151);	
 		}
 		catch (std::exception &e){
-			std::cerr << e.what() << std::endl;
+			std::cout << e.what() << std::endl;
 		}
 		Bureaucrat	echo(alpha);
 	}
@@ -47,19 +47,19 @@ int	main()
 			leader.promote();
 		}
 		catch(std::exception &e){
-			std::cerr << e.what() << std::endl;
+			std::cout << e.what() << std::endl;
 		}
 		try{
 			manager.promote();
 		}
 		catch(std::exception &e){
-			std::cerr << e.what() << std::endl;
+			std::cout << e.what() << std::endl;
 		}
 		try{
 			slave.promote();
 		}
 		catch(std::exception &e){
-			std::cerr << e.what() << std::endl;
+			std::cout << e.what() << std::endl;
 		}
 		std::cout << leader << std::endl;
 		std::cout << manager << std::endl;
@@ -75,19 +75,19 @@ int	main()
 			leader.retrograde();
 		}
 		catch(std::exception &e){
-			std::cerr << e.what() << std::endl;
+			std::cout << e.what() << std::endl;
 		}
 		try{
 			manager.retrograde();
 		}
 		catch(std::exception &e){
-			std::cerr << e.what() << std::endl;
+			std::cout << e.what() << std::endl;
 		}
 		try{
 			slave.retrograde();
 		}
 		catch(std::exception &e){
-			std::cerr << e.what() << std::endl;
+			std::cout << e.what() << std::endl;
 		}
 		std::cout << leader << std::endl;
 		std::cout << manager << std::endl;
