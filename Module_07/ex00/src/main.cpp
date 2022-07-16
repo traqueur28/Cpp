@@ -6,7 +6,7 @@
 /*   By: jgourlin <jgourlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 09:42:19 by jgourlin          #+#    #+#             */
-/*   Updated: 2022/07/16 10:03:20 by jgourlin         ###   ########.fr       */
+/*   Updated: 2022/07/16 10:08:13 by jgourlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,4 +123,5 @@ int main()
         std::cout << "b = " << b << std::endl;
         std::cout << "c = " << c << std::endl << std::endl;
     }
+    return (0);
 }
